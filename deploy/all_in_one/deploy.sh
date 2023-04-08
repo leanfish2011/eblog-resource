@@ -9,9 +9,9 @@ image_name="eblog_all_20230408_162111.tar"
 # 各个服务对应镜像
 image_portainer="portainer:20200329_212642"
 image_eblog_mariadb_infra="mariadb:20200329_204923"
-image_eblog_nginx_infra="eblog_nginx_infra:v1.0_main_20230408_160147_a628b56"
+image_eblog_nginx_infra="eblog_nginx_infra:v1.0_main_20230408_204748_536df9e"
 image_eblog_post_mariadb_init="eblog_post_mariadb_init:v1.0_main_20230408_145543_660a1e9"
-image_eblog_post_service="eblog-post:v1.0_main_20230408_144541_660a1e9"
+image_eblog_post_service="eblog-post:v1.0_dev_20230408_205302_4e421b4"
 image_eblog_web="eblog-web:v1.0_dev_20230408_145938_0a6176f"
 
 # 挂载目录
@@ -50,6 +50,7 @@ sudo docker run -d --net=host \
   --restart=always \
   -v $data_path"/nginx/web":/usr/share/nginx/html \
   -v $data_path"/nginx/log":/var/log/nginx \
+  -v $data_path"/img":/usr/share/nginx/img \
   --name eblog_nginx_infra \
   $image_eblog_nginx_infra
 
@@ -69,6 +70,7 @@ sleep 1m
 echo "4、post 服务启动，端口：9091"
 sudo docker run -d --net=host \
   --restart always \
+  -v $data_path"/img":/opt \
   --name eblog_post_service \
   -e MYSQL_ROOT_PASSWORD=$global_password \
   $image_eblog_post_service

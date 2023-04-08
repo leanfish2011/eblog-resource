@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 项目版本
-version="v2.0"
+version="v1.0"
 
 function build_image()
 {
@@ -13,7 +13,7 @@ function build_image()
     branch=$(git symbolic-ref --short -q HEAD)
     time=$(date "+%Y%m%d_%H%M%S")
     tag=$version"_"$branch"_"$time"_"$latest_commit_id
-    docker_name="ishou_nginx_infra:"$tag
+    docker_name="eblog_nginx_infra:"$tag
 
     sudo docker build -t $docker_name .
 }

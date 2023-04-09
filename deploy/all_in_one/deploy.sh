@@ -78,6 +78,7 @@ sudo docker run -d --net=host \
   --name eblog_post_service \
   -e MYSQL_ROOT_PASSWORD=$global_password \
   -e SERVICE_IP=$local_ip \
+  -e LOGIN_ADMIN_PASSWORD=$global_password \
   $image_eblog_post_service
 
 echo "5、前端镜像启动"

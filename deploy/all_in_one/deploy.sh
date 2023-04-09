@@ -23,6 +23,10 @@ data_path="/home/eblog/volumn"
 global_password=$(date +%s%N|md5sum|head -c 10)
 echo $global_password
 
+# 获取当前服务IP
+local_ip=`ifconfig -a|grep inet|grep -v 127.0.0.1|grep -v inet6|awk '{print $2}'|tr -d "addr:"​`
+echo $local_ip
+
 echo "加载tar包"
 sudo docker load -i $image_name
 
@@ -73,6 +77,7 @@ sudo docker run -d --net=host \
   -v $data_path"/img":/opt \
   --name eblog_post_service \
   -e MYSQL_ROOT_PASSWORD=$global_password \
+  -e SERVICE_IP=$local_ip \
   $image_eblog_post_service
 
 echo "5、前端镜像启动"

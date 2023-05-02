@@ -4,15 +4,15 @@
 
 # -------------------------------项目相关变量 start---------------------------
 # 整个项目镜像tar包
-image_name="eblog_all_20230408_162111.tar"
+image_name="eblog_all_20230502_101511.tar.gz"
 
 # 各个服务对应镜像
 image_portainer="portainer:20200329_212642"
 image_eblog_mariadb_infra="mariadb:20200329_204923"
 image_eblog_nginx_infra="eblog_nginx_infra:v1.0_main_20230408_204748_536df9e"
-image_eblog_post_mariadb_init="eblog_post_mariadb_init:v1.0_main_20230408_145543_660a1e9"
-image_eblog_post_service="eblog-post:v1.0_dev_20230408_205302_4e421b4"
-image_eblog_web="eblog-web:v1.0_dev_20230408_145938_0a6176f"
+image_eblog_post_mariadb_init="eblog_post_mariadb_init:v1.0_dev_20230416_174626_e2c86c5"
+image_eblog_post_service="eblog-post:v1.0_dev_20230416_174325_e2c86c5"
+image_eblog_web="eblog-web:v1.0_dev_20230416_174303_a6e6014"
 
 # 挂载目录
 data_path="/home/eblog/volumn"

@@ -1,7 +1,9 @@
 # eblog简介
 - 一个简洁的博客系统
 - 界面简洁、代码简洁、占用资源少
+- 部署方便，一键部署
 - 适用于个人博客
+- 可作为Java、前端、docker等入门级学习
 
 ## 展示
 #### 主页
@@ -31,7 +33,7 @@
 ## 部署
 > 一键部署
 #### 部署说明：
-1. 选择装有Linux操作系统的服务器（例如Ubuntu系统）
+1. 选择装有Linux操作系统的服务器（例如Ubuntu系统，1核2G足够，可选择云服务器）
 2. 服务器安装好docker。Ubuntu安装docker命令：sudo apt-get update && sudo apt install docker.io
 3. 拷贝[deploy.sh](https://github.com/leanfish2011/eblog-resource/blob/main/deploy/all_in_one/deploy.sh)、镜像tar包到服务器，tar包下载地址：[百度网盘下载地址](https://pan.baidu.com/s/1anG4Bb47q3T-h1zMeJQtyw) 提取码: ssea
 4. 服务器上执行./deploy.sh，看日志提示安装完成
